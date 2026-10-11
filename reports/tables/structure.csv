@@ -1,0 +1,5 @@
+,official,volunteer
+rows_after_dedup,185430,115793
+first_start,2022-03-15 16:10:34+00:00,2022-02-25 16:36:22+00:00
+last_start,2026-09-07 05:28:22+00:00,2026-10-10 04:47:44+00:00
+extra,"{'raion': 99304, 'oblast': 65314, 'hromada': 20812}",{'naive_share': np.float64(0.05)}
