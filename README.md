@@ -20,13 +20,13 @@ How likely is it that a **new air-raid alert starts in a given region (oblast) w
 ```bash
 python3.14 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-make test     # 53 test cases (one needs the downloaded data and is skipped without it), a few seconds
+make test     # 53 test cases (one needs the downloaded data and is skipped without it), about 1 min in a fresh environment
 make all      # downloads data, runs every stage, ~12 min; rewrites reports/
 ```
 
 - **Python version.** Developed and verified on **Python 3.14.8** only (development and the clean-copy check used the same version). The pinned packages need at least Python 3.12 (numpy and scipy, per their package metadata); other Python versions were not tested.
 - Data are downloaded from **fixed commits** and checked by hash (`src/download_data.py`), so numbers do not change when the source repositories update. Package versions are pinned.
-- Checked from a clean copy of the repository (fresh virtual environment, `make all`, before the optional text experiment was added): all 43 tests of that time pass, every table in `reports/tables/` matches (only a run-time column differs) and all figures are identical. Verified on Apple Silicon (macOS); other platforms may differ in the last digits.
+- Checked from a clean clone of the pushed repository (fresh virtual environment, `make all`; the optional text experiment is not part of this check): all 53 tests pass, every table in `reports/tables/` matches (only a run-time column differs) and all figures are identical. Verified on Apple Silicon (macOS); other platforms may differ in the last digits.
 - **Not reproducible by code:** the analysis of raw Telegram messages behind the parser findings (see [Limitations](#5-limitations)). The optional text experiment (`make telegram text`, not part of `make all`, about 150 MB, tens of minutes to download) reads a live channel, so a re-download gives a different set of messages.
 
 ## 3. Method
