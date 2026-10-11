@@ -115,8 +115,8 @@ Details by oblast, hour and before/after the 4 September regime change: [`report
 
 I planned to forecast how many alerts there would be per day. AI suggested the same. I chose a harder question instead: will an alert start in a region in the next 3 hours?
 
-The data gave me the most trouble: duplicates in the official file, and fake end times in about 5% of alerts. I used only end times already known at forecast time.
+The data gave me the most trouble: duplicates in the official file, and about 5% of end times were fake. I used only end times already known at forecast time.
 
 My first plan had no success rule. I wrote one before the test and ran it once.
 
-The model beats a simple baseline, but not the strongest one reliably. The result is modest, but we can trust it.
+The model beats a simple baseline, but not the strongest one reliably. The result is modest, and I trust it within the limits listed above.
