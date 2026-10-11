@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 from .baselines import P_MAX, P_MIN
 from .features import GROUPS
 
-# Для логістичної регресії година подається гармоніками, день тижня прапорцем вихідного, область дамі-колонками.
+# Для логістичної регресії година подається гармоніками, день тижня прапорцем вихідного, область фіктивними (one-hot) стовпцями.
 _LOGIT_DROP = {"hour_local", "dow", "oblast_code"}
 _HGB_DROP = {"hour_sin1", "hour_cos1", "hour_sin2", "hour_cos2"}
 N_OBLASTS = 24

@@ -82,7 +82,7 @@ def _log_h(x):
     return np.log1p(np.minimum(x, CAP_H))
 
 
-def _oblast_matrix(grid: pd.DataFrame, values: np.ndarray, idx: dict, order: list) -> np.ndarray:
+def _oblast_matrix(values: np.ndarray, idx: dict, order: list) -> np.ndarray:
     return np.vstack([values[idx[o]] for o in order])
 
 
@@ -128,7 +128,7 @@ def state_features(events: pd.DataFrame, grid: pd.DataFrame) -> pd.DataFrame:
         for name, v in cols.items():
             mats.setdefault(name, np.zeros((n_o, n_h)))[j] = v
 
-    active = _oblast_matrix(grid, grid.active_cons.to_numpy(float), idx, order)
+    active = _oblast_matrix(grid.active_cons.to_numpy(float), idx, order)
     csum = np.concatenate([np.zeros((n_o, 1)), np.cumsum(active, axis=1)], axis=1)
     for w in ACTIVE_FRAC_WINDOWS_H:
         lo = np.clip(np.arange(1, n_h + 1) - w, 0, None)

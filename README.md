@@ -24,8 +24,9 @@ make test     # 43 test cases (one needs the downloaded data and is skipped with
 make all      # downloads data, runs every stage, ~12 min; rewrites reports/
 ```
 
+- **Python version.** Developed and verified on **Python 3.14.8** only (development and the clean-copy check used the same version). The pinned packages need at least Python 3.12 (numpy and scipy, per their package metadata); other Python versions were not tested.
 - Data are downloaded from **fixed commits** and checked by hash (`src/download_data.py`), so numbers do not change when the source repositories update. Package versions are pinned.
-- Checked from a clean copy of the repository (fresh virtual environment, `make all`): all 43 tests pass, every table in `reports/tables/` matches (only a run-time column differs) and all figures are identical. Verified on Apple Silicon with Python 3.14.8; other platforms may differ in the last digits.
+- Checked from a clean copy of the repository (fresh virtual environment, `make all`): all 43 tests pass, every table in `reports/tables/` matches (only a run-time column differs) and all figures are identical. Verified on Apple Silicon (macOS); other platforms may differ in the last digits.
 - **Not reproducible by code:** the analysis of raw Telegram messages behind the parser findings (see [Limitations](#5-limitations)).
 
 ## 3. Method

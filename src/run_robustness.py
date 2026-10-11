@@ -51,7 +51,7 @@ def archive_arrays(arch, ep, grid):
     return active, z
 
 
-def metrics_row(label, y, P, t, oblast, models):
+def metrics_row(label, y, P, oblast, models):
     out = []
     for m in models:
         out.append({"labels": label, "model": m, "n": len(y), "base_rate": y.mean(), "brier": brier(y, P[m]),
@@ -130,8 +130,8 @@ def main():
     tt = grid.t[both].reset_index(drop=True)
     ob_b = ob[both].reset_index(drop=True)
     pb = {m: P[m][both] for m in models}
-    recs = metrics_row("волонтерський ряд (ті самі рядки)", yv, pb, tt, ob_b, models) + \
-           metrics_row("архів alerts.in.ua (незалежні)", ya, pb, tt, ob_b, models)
+    recs = metrics_row("волонтерський ряд (ті самі рядки)", yv, pb, ob_b, models) + \
+           metrics_row("архів alerts.in.ua (незалежні)", ya, pb, ob_b, models)
     res = pd.DataFrame(recs)
     ci_rows = []
     for label, yy in (("волонтерський ряд (ті самі рядки)", yv), ("архів alerts.in.ua (незалежні)", ya)):

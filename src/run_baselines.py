@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 
 from airalerts import baselines as bl
-from airalerts.baseline_preds import B1_TRAIN_DAYS, MODELS, SCHEMES, baseline_predictions
+from airalerts.baseline_preds import MODELS, SCHEMES, baseline_predictions
 from airalerts.config import FIG, TAB, VAL_LAST_T
 from airalerts.data import load_events
 from airalerts.metrics import auc_within_groups, brier, reliability, summary

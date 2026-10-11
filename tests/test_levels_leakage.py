@@ -17,7 +17,7 @@ def synthetic_archive(seed=0, days=25):
         t = t0
         while t < t0 + pd.Timedelta(days=days):
             t += pd.Timedelta(minutes=float(rng.exponential(300)))
-            for k in range(int(rng.integers(1, 4))):                      # кілька районних записів на епізод
+            for _ in range(int(rng.integers(1, 4))):                      # кілька районних записів на епізод
                 s = t + pd.Timedelta(minutes=float(rng.exponential(15)))
                 f = s + pd.Timedelta(minutes=float(rng.exponential(45)) + 1)
                 lvl = "red" if rng.random() < (0.6 if ob == "Kharkivska oblast" else 0.15) else "yellow"

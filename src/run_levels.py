@@ -79,7 +79,7 @@ def main():
     cfg = cfg.sort_values("brier_tune").reset_index(drop=True)
     cfg.round(5).to_csv(TAB / "levels_configs.csv", index=False)
     best = cfg.config[0]
-    print(f"\nНалаштування (Brier на 09-19..10-01), 5 найкращих:\n", cfg.head(5).round(4).to_string(index=False))
+    print("\nНалаштування (Brier на 09-19..10-01), 5 найкращих:\n", cfg.head(5).round(4).to_string(index=False))
     print(f"Обрана конфігурація: {best}")
 
     p_best = preds[best]
