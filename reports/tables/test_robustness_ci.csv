@@ -1,0 +1,7 @@
+model,method,bss,ci_low,ci_high
+LOGIT,bootstrap_3d,0.0888,0.0556,0.1222
+LOGIT,bootstrap_7d,0.0888,0.05,0.1338
+LOGIT,newey_west_lag3,0.0888,0.0535,0.124
+HGB,bootstrap_3d,0.0979,0.0646,0.1312
+HGB,bootstrap_7d,0.0979,0.0588,0.14
+HGB,newey_west_lag3,0.0979,0.0626,0.1332

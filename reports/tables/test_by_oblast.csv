@@ -1,0 +1,25 @@
+oblast,n,positives,flag_lt30_positives,brier_B0_90d,brier_LOGIT,brier_HGB,bss_LOGIT_vs_B0_90d,bss_HGB_vs_B0_90d
+Cherkaska oblast,751,408,False,0.3022,0.2424,0.2495,0.1979,0.1743
+Chernihivska oblast,933,621,False,0.2223,0.218,0.217,0.0192,0.0238
+Chernivetska oblast,1316,104,False,0.0745,0.0714,0.0723,0.0417,0.0293
+Dnipropetrovska oblast,1048,1008,False,0.0376,0.0359,0.0369,0.046,0.019
+Donetska oblast,448,243,False,0.2493,0.2477,0.2464,0.0062,0.0117
+Ivano-Frankivska oblast,1064,20,True,0.0188,0.0186,0.0195,0.0061,-0.0417
+Kharkivska oblast,1018,943,False,0.0678,0.068,0.0674,-0.0036,0.0056
+Khersonska oblast,799,463,False,0.2538,0.2421,0.241,0.0463,0.0507
+Khmelnytska oblast,948,131,False,0.125,0.113,0.1089,0.0957,0.129
+Kirovohradska oblast,996,655,False,0.2469,0.2214,0.2224,0.1033,0.0992
+Kyiv City,799,421,False,0.29,0.2589,0.2546,0.1074,0.122
+Kyivska oblast,1148,860,False,0.2499,0.1713,0.1776,0.3147,0.2893
+Lvivska oblast,1170,512,False,0.2564,0.2361,0.2363,0.0791,0.0781
+Mykolaivska oblast,1037,913,False,0.1176,0.1062,0.106,0.0966,0.0989
+Odeska oblast,1067,821,False,0.1931,0.1813,0.1795,0.0612,0.0705
+Poltavska oblast,990,702,False,0.2095,0.2035,0.2004,0.0286,0.0437
+Rivnenska oblast,972,205,False,0.1839,0.1616,0.1523,0.1211,0.1718
+Sumska oblast,1028,755,False,0.1912,0.1891,0.1899,0.0113,0.007
+Ternopilska oblast,752,40,False,0.0508,0.0485,0.0475,0.0461,0.0646
+Vinnytska oblast,1087,375,False,0.2533,0.2205,0.2104,0.1292,0.1693
+Volynska oblast,996,434,False,0.2524,0.2431,0.2443,0.0371,0.0324
+Zakarpatska oblast,1342,0,True,0.0006,0.0003,0.0014,0.457,-1.419
+Zaporizka oblast,1023,571,False,0.2144,0.2367,0.225,-0.1044,-0.0499
+Zhytomyrska oblast,829,401,False,0.3049,0.2497,0.2379,0.1813,0.2197
