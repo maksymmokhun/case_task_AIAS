@@ -180,35 +180,35 @@ def main():
 
     # ---------- графіки ----------
     fig, ax = plt.subplots(figsize=(6.5, 6))
-    ax.plot([0, 1], [0, 1], "k--", lw=1, label="ідеал")
+    ax.plot([0, 1], [0, 1], "k--", lw=1, label="perfect")
     for m in (REF, "B3_ARIMA_cal", "LOGIT", "HGB"):
         rel = reliability(yc, pc[m], bins=12)
         ax.plot(rel[:, 0], rel[:, 1], marker="o", ms=3, label=m)
-    ax.set_xlabel("прогнозована ймовірність"); ax.set_ylabel("фактична частка початків")
-    ax.set_title("Калібрування на тесті (консервативна схема)"); ax.legend(fontsize=8)
+    ax.set_xlabel("predicted probability"); ax.set_ylabel("actual share of alert starts")
+    ax.set_title("Calibration on the test"); ax.legend(fontsize=8)
     fig.tight_layout(); fig.savefig(FIG / "14_test_calibration.png"); plt.close(fig)
 
     day = tc.dt.floor("D")
-    daily = pd.DataFrame({"факт": yc, REF: ref_p, "LOGIT": pc["LOGIT"]}).groupby(day.values).mean()
+    daily = pd.DataFrame({"actual": yc, REF: ref_p, "LOGIT": pc["LOGIT"]}).groupby(day.values).mean()
     fig, ax = plt.subplots(figsize=(10, 4))
     daily.plot(ax=ax, color=["k", "#1f77b4", "#d62728"], lw=1.3)
     ax.axvline(REGIME_CHANGE.tz_convert("UTC").tz_localize(None), color="gray", ls="--", lw=1)
-    ax.text(REGIME_CHANGE.tz_convert("UTC").tz_localize(None), ax.get_ylim()[1] * 0.98, " 4 вересня", va="top", fontsize=8)
-    ax.set_ylabel("середня ймовірність / частка початків за добу"); ax.set_xlabel("")
-    ax.set_title("Прогноз проти факту на тесті, добові середні (усі придатні області)")
+    ax.text(REGIME_CHANGE.tz_convert("UTC").tz_localize(None), ax.get_ylim()[1] * 0.98, " 4 September", va="top", fontsize=8)
+    ax.set_ylabel("mean probability / share of alert starts per day"); ax.set_xlabel("")
+    ax.set_title("Forecast vs actual on the test, daily averages (all eligible oblasts)")
     fig.tight_layout(); fig.savefig(FIG / "15_test_forecast_vs_actual.png"); plt.close(fig)
 
     fig, ax = plt.subplots(figsize=(7, 6))
     colors = ["#bbbbbb" if f else "#1f77b4" for f in po.sort_values("bss_LOGIT_vs_B0_90d").flag_lt30_positives]
     po["bss_LOGIT_vs_B0_90d"].sort_values().plot.barh(ax=ax, color=colors)
-    ax.axvline(0, color="k", lw=0.8); ax.set_xlabel("BSS проти B0_90d"); ax.set_ylabel("")
-    ax.set_title("BSS основної моделі по областях, тест\n(сірі: менше 30 позитивів, не інтерпретуються)")
+    ax.axvline(0, color="k", lw=0.8); ax.set_xlabel("Skill score (BSS) vs B0_90d"); ax.set_ylabel("")
+    ax.set_title("Skill score of the primary model by oblast, test\n(grey: fewer than 30 alert starts, not interpreted)")
     fig.tight_layout(); fig.savefig(FIG / "16_test_bss_by_oblast.png"); plt.close(fig)
 
     fig, ax = plt.subplots(figsize=(8, 4))
     ph["bss_LOGIT_vs_B0_90d"].plot.bar(ax=ax, color="#1f77b4")
-    ax.axhline(0, color="k", lw=0.8); ax.set_xlabel("година доби (Europe/Kyiv)"); ax.set_ylabel("BSS проти B0_90d")
-    ax.set_title("BSS основної моделі по годині доби, тест")
+    ax.axhline(0, color="k", lw=0.8); ax.set_xlabel("hour of day (Europe/Kyiv)"); ax.set_ylabel("Skill score (BSS) vs B0_90d")
+    ax.set_title("Skill score of the primary model by hour of day, test")
     fig.tight_layout(); fig.savefig(FIG / "17_test_bss_by_hour.png"); plt.close(fig)
     print(f"\nГотово за {time.time() - t_start:.0f} с")
 

@@ -55,7 +55,7 @@ Details by oblast, hour and before/after the 4 September regime change: [`report
 
 ![Forecast vs actual on the test](reports/figures/15_test_forecast_vs_actual.png)
 
-*Daily average forecast probability vs the actual share of alert starts on the test. Black: actual, red: logistic regression, blue: 90-day baseline. The baseline stays flat while the real rate rises; the model follows the trend but underestimates the peaks. Figure labels are in Ukrainian.*
+*Daily average forecast probability vs the actual share of alert starts on the test. Black: actual, red: logistic regression, blue: 90-day baseline. The baseline stays flat while the real rate rises; the model follows the trend but underestimates the peaks.*
 
 ![Skill by oblast](reports/figures/16_test_bss_by_oblast.png)
 
@@ -100,7 +100,7 @@ Details by oblast, hour and before/after the 4 September regime change: [`report
 - Terms of use of the original Telegram channels were not checked.
 - Pinned commits and file sizes: [`src/download_data.py`](src/download_data.py).
 
-**Repository layout.** `src/airalerts/` (package), `src/run_*.py` (stages), `tests/`, `reports/` (results, tables, figures), `docs/` (problem statement, definition of done, methodology details). Reports and docs are in Ukrainian; figure labels are too.
+**Repository layout.** `src/airalerts/` (package), `src/run_*.py` (stages), `tests/`, `reports/` (results, tables, figures), `docs/` (problem statement, definition of done, methodology details). Reports and docs are in Ukrainian, and so are the figures of the data audit and validation (01–13); the figures shown in this README (14–19) are in English.
 
 **License.** The code is under the [MIT License](LICENSE). The data are not part of this repository and keep the terms of their original sources.
 

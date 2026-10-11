@@ -111,15 +111,15 @@ def main():
     day = ep.started_at.dt.floor("D").dt.tz_localize(None)
     m = (ep.started_at >= TUNE_FROM).to_numpy()
     daily = pd.DataFrame({"day": day[m], "y": y[m], "model": p_best[m], "B_exp": ref_all[m], "B_7d": ref_w7[m]}).groupby("day").mean()
-    ax[0].plot(daily.index, daily.y, "k-o", ms=3, label="факт")
+    ax[0].plot(daily.index, daily.y, "k-o", ms=3, label="actual")
     for k, c in (("model", "C0"), ("B_exp", "C3"), ("B_7d", "C2")):
-        ax[0].plot(daily.index, daily[k], c, label={"model": "модель", "B_exp": "B_exp", "B_7d": "B_7d"}[k])
+        ax[0].plot(daily.index, daily[k], c, label={"model": "level layer", "B_exp": "B_exp (all history)", "B_7d": "B_7d (last 7 days)"}[k])
     ax[0].axvline(EVAL_FROM.tz_localize(None), color="gray", ls="--", lw=0.8)
-    ax[0].set_ylabel("частка червоних серед початків"); ax[0].set_title("Добова частка червоних: факт і прогноз"); ax[0].legend(); ax[0].tick_params(axis="x", rotation=30)
+    ax[0].set_ylabel("share of red among alert starts"); ax[0].set_title("Daily share of red alerts: actual and forecast"); ax[0].legend(); ax[0].tick_params(axis="x", rotation=30)
     for k, c in (("MODEL", "C0"), ("B_exp", "C3")):
         r = reliability(y_ev, cand[k][ev], bins=6)
-        ax[1].plot(r[:, 0], r[:, 1], "-o", color=c, label=k)
-    ax[1].plot([0, 0.6], [0, 0.6], "k--", lw=0.8); ax[1].set_xlabel("прогноз"); ax[1].set_ylabel("частота"); ax[1].set_title("Калібрування на 10-01..10-10"); ax[1].legend()
+        ax[1].plot(r[:, 0], r[:, 1], "-o", color=c, label="level layer" if k == "MODEL" else "B_exp (all history)")
+    ax[1].plot([0, 0.6], [0, 0.6], "k--", lw=0.8); ax[1].set_xlabel("predicted probability"); ax[1].set_ylabel("actual frequency"); ax[1].set_title("Calibration, 1-10 October"); ax[1].legend()
     fig.tight_layout(); fig.savefig(FIG / "18_levels.png"); plt.close(fig)
 
 

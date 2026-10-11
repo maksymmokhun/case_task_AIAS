@@ -147,17 +147,18 @@ def main():
 
     # ---------- графік ----------
     plt.rcParams.update({"figure.dpi": 130, "axes.spines.top": False, "axes.spines.right": False})
-    fig, ax = plt.subplots(figsize=(9, 4))
+    fig, ax = plt.subplots(figsize=(10, 4.4))
     items = []
     for _, r in rb[(rb.model == "LOGIT")].iterrows():
-        items.append((f"{r.subset}\nпроти {r.vs}", r.bss, r.ci_low, r.ci_high))
+        subset = r.subset.replace("усі області", "all\noblasts").replace("без 7 областей", "without 7\noblasts")   # у таблицях підписи українською
+        items.append((f"{subset}\nvs {r.vs}", r.bss, r.ci_low, r.ci_high))
     for _, r in cis[(cis.model == "LOGIT")].iterrows():
-        items.append((f"мітки: {'архів' if 'архів' in r.labels else 'ряд T1'}\nпроти {r.vs}", r.bss, r.ci_low, r.ci_high))
+        items.append((f"{'archive' if 'архів' in r.labels else 'volunteer'}\nlabels\nvs {r.vs}", r.bss, r.ci_low, r.ci_high))
     xs = np.arange(len(items))
     ax.errorbar(xs, [i[1] for i in items], yerr=[[i[1] - i[2] for i in items], [i[3] - i[1] for i in items]], fmt="o", capsize=3)
     ax.axhline(0, color="k", lw=0.8)
     ax.set_xticks(xs); ax.set_xticklabels([i[0] for i in items], fontsize=7)
-    ax.set_ylabel("BSS логістичної моделі"); ax.set_title("Стійкість BSS: області й джерело міток (95% ІН, блоки 3 доби)")
+    ax.set_ylabel("Skill score (BSS) of logistic regression"); ax.set_title("Robustness of the skill score: oblasts and label source (95% CI, 3-day blocks)")
     fig.tight_layout(); fig.savefig(FIG / "19_robustness.png"); plt.close(fig)
     print(f"\nГотово за {time.time() - t0:.0f} с")
 
