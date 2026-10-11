@@ -1,0 +1,25 @@
+oblast,n,positives,brier_B0_90d,brier_HGB_sel,bss_vs_best_base
+Cherkaska oblast,2271,607,0.1973,0.1941,0.0162
+Chernihivska oblast,1923,1457,0.1858,0.1827,0.0171
+Chernivetska oblast,2649,81,0.0302,0.0297,0.0165
+Dnipropetrovska oblast,2214,2006,0.0843,0.0832,0.0129
+Donetska oblast,1119,582,0.2387,0.2327,0.0249
+Ivano-Frankivska oblast,2542,71,0.0275,0.028,-0.016
+Kharkivska oblast,2099,1929,0.0732,0.0734,-0.0027
+Khersonska oblast,1834,1212,0.2243,0.2221,0.0096
+Khmelnytska oblast,2301,138,0.0574,0.0547,0.0476
+Kirovohradska oblast,2318,966,0.2473,0.2382,0.0368
+Kyiv City,1802,472,0.1976,0.1926,0.025
+Kyivska oblast,2316,927,0.2431,0.2327,0.0431
+Lvivska oblast,2497,647,0.1924,0.1881,0.0222
+Mykolaivska oblast,1975,1349,0.2176,0.2101,0.0344
+Odeska oblast,2235,1314,0.244,0.2241,0.0817
+Poltavska oblast,2140,1332,0.2363,0.231,0.0224
+Rivnenska oblast,2596,193,0.0708,0.0679,0.0404
+Sumska oblast,2086,1718,0.145,0.1422,0.0192
+Ternopilska oblast,2286,79,0.0339,0.0333,0.0195
+Vinnytska oblast,2477,264,0.0958,0.0936,0.023
+Volynska oblast,2079,828,0.2415,0.2323,0.0382
+Zakarpatska oblast,1870,65,0.0339,0.0348,-0.0251
+Zaporizka oblast,1924,1175,0.2173,0.2159,0.0066
+Zhytomyrska oblast,2323,464,0.1638,0.151,0.0781
