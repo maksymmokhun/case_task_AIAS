@@ -1,0 +1,55 @@
+повідомлень 26,318 (2026-03-26 13:36:16+00:00 .. 2026-10-11 10:05:43+00:00), відредагованих 2.0%
+
+По місяцях:
+          messages  edited_share  share_mentioning_oblast  share_with_threat_type
+month                                                                           
+2026-03       394         0.015                    0.789                   0.759
+2026-04      1805         0.019                    0.821                   0.704
+2026-05      2421         0.020                    0.821                   0.684
+2026-06      3504         0.013                    0.849                   0.717
+2026-07      4025         0.021                    0.829                   0.690
+2026-08      4704         0.027                    0.852                   0.749
+2026-09      6345         0.018                    0.819                   0.801
+2026-10      3120         0.019                    0.809                   0.814
+V1: готово
+V2: готово
+V3: готово
+V4: готово
+
+Brier по вікнах:
+ model   A_counts  B_counts_typed     none
+window                                   
+V1       0.13661         0.13634  0.13899
+V2       0.15005         0.15042  0.15111
+V3       0.15090         0.15074  0.15144
+V4       0.14180         0.14200  0.14317
+
+Валідація, BSS з текстом проти без тексту (3 доби):
+        variant     n  brier_text  brier_none  auc_ob_text  auc_ob_none  bss_vs_none  ci_low  ci_high  windows_better
+      A_counts 51876     0.14487     0.14621       0.6329      0.61679      0.00919 0.00277  0.01537               4
+B_counts_typed 51876     0.14490     0.14621       0.6323      0.61679      0.00895 0.00223  0.01524               4
+
+Кращий варіант: A_counts; правило (нижня межа ІН > 0): ПРИЙНЯТО
+
+HGB (лише для інформації):
+        variant  bss_vs_none  ci_low  ci_high  brier_text  brier_none
+      A_counts      0.01329 0.00593  0.02048     0.14486     0.14681
+B_counts_typed      0.01421 0.00714  0.02110     0.14472     0.14681
+B3_ETS: 77,175 рядків, 31 с
+B3_ARIMA: 77,175 рядків, 59 с
+
+ТЕСТ (один запуск):
+               model     n  train_rows   brier  auc_within_oblast
+      LOGIT_no_text 23561     64906.0 0.15784            0.63257
+LOGIT_text_A_counts 23561     64906.0 0.15600            0.64264
+    LOGIT_main_180d 23561         NaN 0.15883            0.63311
+             B0_90d 23561         NaN 0.17430            0.57147
+       B3_ARIMA_cal 23561         NaN 0.16035            0.60682 
+               model              vs     bss   ci_low  ci_high
+LOGIT_text_A_counts   LOGIT_no_text 0.01171  0.00348  0.01994
+LOGIT_text_A_counts          B0_90d 0.10501  0.06817  0.14358
+LOGIT_text_A_counts LOGIT_main_180d 0.01784  0.00827  0.02712
+LOGIT_text_A_counts    B3_ARIMA_cal 0.02713  0.00614  0.04873
+    LOGIT_main_180d    B3_ARIMA_cal 0.00947 -0.00991  0.02731
+
+Готово за 113 с

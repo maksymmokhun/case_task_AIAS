@@ -1,7 +1,7 @@
-# Повне відтворення: make all (близько 12 хв на Apple Silicon, Python 3.14.8). Окремі етапи: make data | test | audit | baselines | model | blocks | final | levels | robustness
+# Повне відтворення: make all (близько 12 хв на Apple Silicon, Python 3.14.8). Окремі етапи: make data | test | audit | baselines | model | blocks | final | levels | robustness. Опційний текстовий експеримент (не входить у all): make telegram text
 PY ?= python
 
-.PHONY: all data test audit baselines model blocks final levels robustness
+.PHONY: all data test audit baselines model blocks final levels robustness telegram text
 all: data test audit baselines model blocks final levels robustness
 
 data:
@@ -22,3 +22,7 @@ levels:
 	$(PY) -u src/run_levels.py > reports/levels_run.log
 robustness:
 	$(PY) -u src/run_robustness.py > reports/robustness_run.log
+telegram:                     # опційно: завантаження сторінок каналу (потрібен інтернет), не входить у all
+	$(PY) src/download_telegram.py
+text:                         # опційно: текстовий міні-експеримент, потребує make telegram
+	$(PY) -u src/run_text.py > reports/text_run.log

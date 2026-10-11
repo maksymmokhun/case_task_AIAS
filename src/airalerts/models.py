@@ -34,12 +34,12 @@ def _design(X: pd.DataFrame, rows: np.ndarray, cols: list, dummies: bool) -> np.
 
 
 def fit_predict(kind: str, params: dict, X: pd.DataFrame, y: np.ndarray, train_rows: np.ndarray,
-                pred_rows: np.ndarray, drop_groups: tuple = (), return_model: bool = False):
+                pred_rows: np.ndarray, drop_groups: tuple = (), return_model: bool = False, extra: tuple = ()):
     """Навчає модель на train_rows (позиції в X) і повертає ймовірності для pred_rows.
 
     kind='logit': StandardScaler + LogisticRegression(C). kind='hgb': HistGradientBoostingClassifier.
     """
-    cols = feature_columns(kind, drop_groups)
+    cols = feature_columns(kind, drop_groups) + list(extra)          # extra: додаткові колонки X (текстовий експеримент)
     if kind == "logit":
         model = make_pipeline(StandardScaler(), LogisticRegression(C=params["C"], max_iter=500))
         dummies = "oblast" not in drop_groups

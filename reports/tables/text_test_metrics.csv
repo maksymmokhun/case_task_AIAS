@@ -1,0 +1,6 @@
+model,n,train_rows,brier,auc_within_oblast
+LOGIT_no_text,23561,64906.0,0.15784,0.63257
+LOGIT_text_A_counts,23561,64906.0,0.156,0.64264
+LOGIT_main_180d,23561,,0.15883,0.63311
+B0_90d,23561,,0.1743,0.57147
+B3_ARIMA_cal,23561,,0.16035,0.60682

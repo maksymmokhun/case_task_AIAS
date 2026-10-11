@@ -1,0 +1,6 @@
+model,vs,bss,ci_low,ci_high
+LOGIT_text_A_counts,LOGIT_no_text,0.01171,0.00348,0.01994
+LOGIT_text_A_counts,B0_90d,0.10501,0.06817,0.14358
+LOGIT_text_A_counts,LOGIT_main_180d,0.01784,0.00827,0.02712
+LOGIT_text_A_counts,B3_ARIMA_cal,0.02713,0.00614,0.04873
+LOGIT_main_180d,B3_ARIMA_cal,0.00947,-0.00991,0.02731
