@@ -15,7 +15,7 @@ Forecast the probability that a **new air-raid alert starts in an oblast within 
 ```bash
 python3.14 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-make test     # 43 test cases, ~30 s: leakage and boundary checks on synthetic data
+make test     # 43 test cases (one needs the downloaded data and is skipped without it), ~1 min: leakage and boundary checks on synthetic data
 make all      # downloads data, runs every stage, ~12 min; rewrites reports/
 ```
 
