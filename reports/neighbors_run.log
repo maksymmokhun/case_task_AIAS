@@ -1,0 +1,53 @@
+ознаки готові, 3 с
+logit V0_base готово, 4 с
+logit V1_windows готово, 4 с
+logit V2_aggregates готово, 5 с
+logit V3_ring2 готово, 6 с
+logit V4_all готово, 6 с
+hgb V0_base готово, 15 с
+hgb V1_windows готово, 29 с
+hgb V2_aggregates готово, 36 с
+hgb V3_ring2 готово, 44 с
+hgb V4_all готово, 52 с
+
+ model       variant  n_new   brier  auc_in_oblast  dAUC_vs_V0  bss_vs_V0   bss_lo   bss_hi  windows_better
+logit       V0_base      0 0.14459        0.62685     0.00000    0.00000  0.00000  0.00000             NaN
+logit    V1_windows      2 0.14458        0.62703     0.00018    0.00010 -0.00015  0.00035             3.0
+logit V2_aggregates      5 0.14442        0.63108     0.00423    0.00115 -0.00047  0.00278             3.0
+logit      V3_ring2      2 0.14472        0.62623    -0.00062   -0.00088 -0.00163 -0.00017             1.0
+logit        V4_all      9 0.14457        0.62977     0.00292    0.00015 -0.00153  0.00186             2.0
+  hgb       V0_base      0 0.14432        0.61953     0.00000    0.00000  0.00000  0.00000             NaN
+  hgb    V1_windows      2 0.14430        0.62109     0.00156    0.00013 -0.00044  0.00075             2.0
+  hgb V2_aggregates      5 0.14435        0.61967     0.00014   -0.00020 -0.00117  0.00076             2.0
+  hgb      V3_ring2      2 0.14431        0.62185     0.00232    0.00004 -0.00080  0.00082             2.0
+  hgb        V4_all      9 0.14435        0.62025     0.00072   -0.00018 -0.00129  0.00092             2.0
+
+Δ AUC по областях (найкращий варіант проти V0):
+                  oblast  positives logit_best_variant  logit_dAUC hgb_best_variant  hgb_dAUC
+       Cherkaska oblast        607      V2_aggregates      0.0020       V1_windows    0.0066
+    Chernihivska oblast       1457      V2_aggregates     -0.0052       V1_windows    0.0006
+    Chernivetska oblast         81      V2_aggregates      0.0226       V1_windows    0.0226
+ Dnipropetrovska oblast       2006      V2_aggregates     -0.0039       V1_windows   -0.0042
+        Donetska oblast        582      V2_aggregates      0.0173       V1_windows   -0.0007
+Ivano-Frankivska oblast         71      V2_aggregates      0.0175       V1_windows    0.0061
+      Kharkivska oblast       1929      V2_aggregates     -0.0011       V1_windows    0.0085
+      Khersonska oblast       1212      V2_aggregates     -0.0003       V1_windows   -0.0012
+     Khmelnytska oblast        138      V2_aggregates      0.0125       V1_windows   -0.0014
+   Kirovohradska oblast        966      V2_aggregates     -0.0026       V1_windows    0.0018
+              Kyiv City        472      V2_aggregates     -0.0066       V1_windows   -0.0053
+         Kyivska oblast        927      V2_aggregates      0.0036       V1_windows   -0.0003
+         Lvivska oblast        647      V2_aggregates     -0.0144       V1_windows   -0.0022
+     Mykolaivska oblast       1349      V2_aggregates      0.0018       V1_windows   -0.0002
+          Odeska oblast       1314      V2_aggregates      0.0009       V1_windows    0.0000
+       Poltavska oblast       1332      V2_aggregates     -0.0019       V1_windows    0.0005
+       Rivnenska oblast        193      V2_aggregates      0.0014       V1_windows    0.0036
+          Sumska oblast       1718      V2_aggregates      0.0003       V1_windows   -0.0006
+     Ternopilska oblast         79      V2_aggregates      0.0342       V1_windows   -0.0060
+       Vinnytska oblast        264      V2_aggregates      0.0312       V1_windows    0.0005
+        Volynska oblast        828      V2_aggregates     -0.0251       V1_windows   -0.0015
+     Zakarpatska oblast         65      V2_aggregates     -0.0130       V1_windows    0.0075
+       Zaporizka oblast       1175      V2_aggregates      0.0046       V1_windows   -0.0007
+     Zhytomyrska oblast        464      V2_aggregates      0.0258       V1_windows    0.0034
+Готово за 54 с
+
+[exited with code 0]

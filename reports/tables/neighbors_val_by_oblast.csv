@@ -1,0 +1,25 @@
+oblast,positives,logit_best_variant,logit_dAUC,hgb_best_variant,hgb_dAUC
+Cherkaska oblast,607,V2_aggregates,0.002,V1_windows,0.0066
+Chernihivska oblast,1457,V2_aggregates,-0.0052,V1_windows,0.0006
+Chernivetska oblast,81,V2_aggregates,0.0226,V1_windows,0.0226
+Dnipropetrovska oblast,2006,V2_aggregates,-0.0039,V1_windows,-0.0042
+Donetska oblast,582,V2_aggregates,0.0173,V1_windows,-0.0007
+Ivano-Frankivska oblast,71,V2_aggregates,0.0175,V1_windows,0.0061
+Kharkivska oblast,1929,V2_aggregates,-0.0011,V1_windows,0.0085
+Khersonska oblast,1212,V2_aggregates,-0.0003,V1_windows,-0.0012
+Khmelnytska oblast,138,V2_aggregates,0.0125,V1_windows,-0.0014
+Kirovohradska oblast,966,V2_aggregates,-0.0026,V1_windows,0.0018
+Kyiv City,472,V2_aggregates,-0.0066,V1_windows,-0.0053
+Kyivska oblast,927,V2_aggregates,0.0036,V1_windows,-0.0003
+Lvivska oblast,647,V2_aggregates,-0.0144,V1_windows,-0.0022
+Mykolaivska oblast,1349,V2_aggregates,0.0018,V1_windows,-0.0002
+Odeska oblast,1314,V2_aggregates,0.0009,V1_windows,0.0
+Poltavska oblast,1332,V2_aggregates,-0.0019,V1_windows,0.0005
+Rivnenska oblast,193,V2_aggregates,0.0014,V1_windows,0.0036
+Sumska oblast,1718,V2_aggregates,0.0003,V1_windows,-0.0006
+Ternopilska oblast,79,V2_aggregates,0.0342,V1_windows,-0.006
+Vinnytska oblast,264,V2_aggregates,0.0312,V1_windows,0.0005
+Volynska oblast,828,V2_aggregates,-0.0251,V1_windows,-0.0015
+Zakarpatska oblast,65,V2_aggregates,-0.013,V1_windows,0.0075
+Zaporizka oblast,1175,V2_aggregates,0.0046,V1_windows,-0.0007
+Zhytomyrska oblast,464,V2_aggregates,0.0258,V1_windows,0.0034

@@ -1,0 +1,25 @@
+oblast,n,positives,auc_B0_90d,auc_LOGIT,auc_HGB
+Cherkaska oblast,2271,607,0.526,0.573,0.5697
+Chernihivska oblast,1923,1457,0.5174,0.5728,0.5479
+Chernivetska oblast,2649,81,0.5513,0.6107,0.5924
+Dnipropetrovska oblast,2214,2006,0.6324,0.6443,0.6624
+Donetska oblast,1119,582,0.6577,0.6143,0.6619
+Ivano-Frankivska oblast,2542,71,0.5615,0.6973,0.6278
+Kharkivska oblast,2099,1929,0.6445,0.6634,0.6152
+Khersonska oblast,1834,1212,0.5707,0.5599,0.5804
+Khmelnytska oblast,2301,138,0.4704,0.635,0.6623
+Kirovohradska oblast,2318,966,0.5105,0.5975,0.5915
+Kyiv City,1802,472,0.4948,0.5863,0.563
+Kyivska oblast,2316,927,0.5203,0.6125,0.6042
+Lvivska oblast,2497,647,0.5575,0.6048,0.6051
+Mykolaivska oblast,1975,1349,0.5531,0.6099,0.6091
+Odeska oblast,2235,1314,0.5548,0.6717,0.6635
+Poltavska oblast,2140,1332,0.541,0.5983,0.5773
+Rivnenska oblast,2596,193,0.4323,0.6681,0.6538
+Sumska oblast,2086,1718,0.5706,0.616,0.616
+Ternopilska oblast,2286,79,0.5109,0.6556,0.6682
+Vinnytska oblast,2477,264,0.5332,0.6057,0.6405
+Volynska oblast,2079,828,0.5259,0.6054,0.6059
+Zakarpatska oblast,1870,65,0.5484,0.7223,0.5993
+Zaporizka oblast,1924,1175,0.6808,0.6694,0.6928
+Zhytomyrska oblast,2323,464,0.468,0.6499,0.6586
