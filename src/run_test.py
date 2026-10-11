@@ -23,6 +23,7 @@ from airalerts.baseline_preds import SCHEMES, baseline_predictions
 from airalerts.config import (BLOCK_DAYS, BLOCK_DAYS_ROBUST, FIG, HORIZON_H, N_BOOT, PRIMARY, REGIME_CHANGE, SECONDARY,
                               TAB, TEST_START)
 from airalerts.data import load_events
+from airalerts.maps import map_test_bss
 from airalerts.metrics import auc_within_groups, block_bootstrap_bss, brier, newey_west_se, reliability, summary
 from airalerts.splits import train_mask
 from airalerts.state import build_grid
@@ -198,12 +199,7 @@ def main():
     ax.set_title("Forecast vs actual on the test, daily averages (all eligible oblasts)")
     fig.tight_layout(); fig.savefig(FIG / "15_test_forecast_vs_actual.png"); plt.close(fig)
 
-    fig, ax = plt.subplots(figsize=(7, 6))
-    colors = ["#bbbbbb" if f else "#1f77b4" for f in po.sort_values("bss_LOGIT_vs_B0_90d").flag_lt30_positives]
-    po["bss_LOGIT_vs_B0_90d"].sort_values().plot.barh(ax=ax, color=colors)
-    ax.axvline(0, color="k", lw=0.8); ax.set_xlabel("Skill score (BSS) vs B0_90d"); ax.set_ylabel("")
-    ax.set_title("Skill score of the primary model by oblast, test\n(grey: fewer than 30 alert starts, not interpreted)")
-    fig.tight_layout(); fig.savefig(FIG / "16_test_bss_by_oblast.png"); plt.close(fig)
+    map_test_bss(po, FIG / "16_test_bss_by_oblast.png")      # карта замість стовпчастої діаграми (потребує ua_oblasts.geojson)
 
     fig, ax = plt.subplots(figsize=(8, 4))
     ph["bss_LOGIT_vs_B0_90d"].plot.bar(ax=ax, color="#1f77b4")

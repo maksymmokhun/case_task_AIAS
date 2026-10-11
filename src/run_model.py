@@ -21,6 +21,7 @@ from airalerts.baseline_preds import MODELS as BASE_MODELS
 from airalerts.baseline_preds import SCHEMES, baseline_predictions
 from airalerts.config import FIG, HORIZON_H, TAB, VAL_LAST_T
 from airalerts.data import load_events
+from airalerts.maps import map_val_bss
 from airalerts.metrics import auc_within_groups, block_bootstrap_bss, brier, reliability, summary
 from airalerts.splits import pre_window, train_mask, val_windows
 from airalerts.state import build_grid
@@ -212,11 +213,7 @@ def main():
     ax.set_title("Абляція груп ознак, валідація"); ax.invert_yaxis()
     fig.tight_layout(); fig.savefig(FIG / "11_model_ablation.png"); plt.close(fig)
 
-    fig, ax = plt.subplots(figsize=(7, 6))
-    po["bss_vs_best_base"].sort_values().plot.barh(ax=ax, color="#1f77b4")
-    ax.axvline(0, color="k", lw=0.8); ax.set_xlabel(f"BSS проти {best_base}"); ax.set_ylabel("")
-    ax.set_title(f"{top}: BSS по областях, валідація")
-    fig.tight_layout(); fig.savefig(FIG / "12_model_bss_by_oblast.png"); plt.close(fig)
+    map_val_bss(po, top, best_base, FIG / "12_model_bss_by_oblast.png")   # карта замість стовпчастої діаграми
     print(f"\nГотово за {time.time() - t_start:.0f} с")
 
 

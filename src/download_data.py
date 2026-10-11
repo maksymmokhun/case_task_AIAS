@@ -19,6 +19,9 @@ FILES = [
      "datasets/official_data_en.csv", 31025633, "4c9ef9bf023fefcbfd50cf45188ef36b5119aebe"),
     ("alerts_in_ua.csv", "JustJimer/ukraine-air-alert-stats", "3b0e7f1dc7e0e04e85db73f8a24b3e587d3e05ee",
      "archive/alerts_in_ua.csv", 2903971, "16a1d0a5efa79a3022777124b27601ebf75064b1"),
+    # межі областей (на основі OpenStreetMap, ODbL) лише для карт; на жодне число в reports/ не впливають
+    ("ua_oblasts.geojson", "EugeneBorshch/ukraine_geojson", "6533810c16180947381dca2e965584c1e526a07e",
+     "UA_FULL_Ukraine.geojson", 813109, "96ea385fff349f8ecee3afebf8544e082525c51b"),
 ]
 
 
