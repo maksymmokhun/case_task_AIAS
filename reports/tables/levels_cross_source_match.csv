@@ -1,0 +1,5 @@
+tolerance_min,archive_episodes,volunteer_starts,episodes_with_volunteer_start,volunteer_starts_with_episode
+10,4099,5182,0.3025,0.2387
+30,4099,5182,0.527,0.419
+60,4099,5182,0.6865,0.5621
+180,4099,5182,0.9119,0.7482
